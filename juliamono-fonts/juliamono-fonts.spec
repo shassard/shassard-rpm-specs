@@ -1,4 +1,4 @@
-Version:        0.050
+Version:        0.051
 Release:        1%{?dist}
 URL:            https://juliamono.netlify.app/
 
@@ -18,21 +18,16 @@ Source10:       63-%{fontpkgname}.conf
 
 %fontpkg
 
-
 %prep
 %autosetup -c
-
 
 %build
 %fontbuild
 
-
 %install
 %fontinstall
 
-
 %check
 %fontcheck
-
 
 %fontfiles
