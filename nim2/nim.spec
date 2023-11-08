@@ -6,7 +6,7 @@ Version: 2.0.0
 Release: 1
 License: MIT
 Group: Development/Languages
-Source: https://github.com/nim-lang/nightlies/releases/download/latest-version-2-0/source.tar.xz
+Source: https://nim-lang.org/download/%{name}-%{version}.tar.xz
 URL: https://nim-lang.org/
 BuildRequires: gcc
 BuildRequires: pcre2-devel
