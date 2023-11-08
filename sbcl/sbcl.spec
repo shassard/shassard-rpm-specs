@@ -7,7 +7,7 @@
 
 Name: 	 sbcl
 Summary: Steel Bank Common Lisp
-Version: 2.3.5
+Version: 2.3.10
 Release: 1%{?dist}
 
 License: BSD
@@ -22,18 +22,14 @@ Source1: https://downloads.sourceforge.net/sourceforge/sbcl/sbcl-%{version}-docu
 ## x86 section
 %ifarch %{ix86}
 %define sbcl_arch x86
-BuildRequires: sbcl
-# or
-#Source10: https://downloads.sourceforge.net/sourceforge/sbcl/sbcl-1.0.15-x86-linux-binary.tar.bz2
-#%define sbcl_bootstrap_src -b 10
+Source10: https://downloads.sourceforge.net/sourceforge/sbcl/sbcl-1.0.15-x86-linux-binary.tar.bz2
+%define sbcl_bootstrap_src -b 10
 %endif
 
 ## x86_64 section
 Source20: https://downloads.sourceforge.net/sourceforge/sbcl/sbcl-2.3.0-x86-64-linux-binary.tar.bz2
 %ifarch x86_64
 %define sbcl_arch x86-64
-#BuildRequires: sbcl
-# or
 %define sbcl_bootstrap_src -b 20
 %define sbcl_bootstrap_dir sbcl-2.3.0-x86-64-linux
 %endif
@@ -42,61 +38,42 @@ Source20: https://downloads.sourceforge.net/sourceforge/sbcl/sbcl-2.3.0-x86-64-l
 # Thanks David!
 %ifarch ppc 
 %define sbcl_arch ppc
-BuildRequires: sbcl
-# or
-#Source30: sbcl-1.0.1-patched_el4-powerpc-linux.tar.bz2
-#Source30: sbcl-1.0.1-patched-powerpc-linux.tar.bz2
-#%define sbcl_bootstrap_src -b 30
+Source30: https://downloads.sourceforge.net/sourceforge/sbcl/sbcl-1.2.7-powerpc-linux-binary.tar.bz2
+%define sbcl_bootstrap_src -b 30
+%define sbcl_bootstrap_dir sbcl-1.2.7-powerpc-linux
 %endif
 
 ## sparc section
 %ifarch sparcv9
 %define sbcl_arch sparc 
-BuildRequires: sbcl
-# or
-#Source40: https://downloads.sourceforge.net/sourceforge/sbcl/sbcl-0.9.17-sparc-linux-binary.tar.bz2
-#%define sbcl_bootstrap_src -b 40
+Source40: https://downloads.sourceforge.net/sourceforge/sbcl/sbcl-1.0.28-sparc-linux-binary.tar.bz2
+%define sbcl_bootstrap_src -b 40
+%define sbcl_bootstrap_dir sbcl-1.0.28-sparc-linux
 %endif
 
 ## arm section
 %ifarch armv5tel
 %define sbcl_arch arm
-BuildRequires: sbcl
-# or
-#Source50: https://downloads.sourceforge.net/sourceforge/sbcl/sbcl-1.2.0-armel-linux-binary.tar.bz2
-#%define sbcl_bootstrap_src -b 50
-#%define sbcl_bootstrap_dir sbcl-1.2.0-armel-linux
+Source50: https://downloads.sourceforge.net/sourceforge/sbcl/sbcl-1.2.0-armel-linux-binary.tar.bz2
+%define sbcl_bootstrap_src -b 50
+%define sbcl_bootstrap_dir sbcl-1.2.0-armel-linux
 %endif
 
 # generated on a fedora20 arm box, sf bootstrap missing sb-gmp
 %ifarch armv6hl armv7hl
 %define sbcl_arch arm
-BuildRequires: sbcl
-# or
-#Source60: sbcl-1.2.0-armhf-linux-binary-2.tar.bz2
-#Source60: https://downloads.sourceforge.net/sourceforge/sbcl/sbcl-1.2.0-armhf-linux-binary.tar.bz2
-#%define sbcl_bootstrap_src -b 60
-#%define sbcl_bootstrap_dir sbcl-1.2.0-armhf-vfp
+Source60: https://downloads.sourceforge.net/sourceforge/sbcl/sbcl-1.2.0-armhf-linux-binary.tar.bz2
+%define sbcl_bootstrap_src -b 60
+%define sbcl_bootstrap_dir sbcl-1.2.0-armhf-vfp
 %endif
 
 ## aarch64 section
+Source70: https://downloads.sourceforge.net/sourceforge/sbcl/sbcl-1.4.2-arm64-linux-binary.tar.bz2
 %ifarch aarch64
 %define sbcl_arch arm64
-BuildRequires: sbcl
-# or
-#Source70: https://downloads.sourceforge.net/sourceforge/sbcl/sbcl-1.3.16-arm64-linux-binary.tar.bz2
-#%define sbcl_bootstrap_src -b 70
-#%define sbcl_bootstrap_dir sbcl-1.3.16-arm64-linux
+%define sbcl_bootstrap_src -b 70
+%define sbcl_bootstrap_dir sbcl-1.4.2-arm64-linux
 %endif
-
-#Patch1: sbcl-1.4.14-personality.patch
-#Patch2: sbcl-1.4.2-optflags.patch
-#Patch3: sbcl-2.0.1-verbose-build.patch
-
-## upstreamable patches
-#Patch100: sbcl-1.4.14-gcc10.patch
-
-## upstream patches
 
 BuildRequires: make
 BuildRequires: libzstd-devel
@@ -128,12 +105,6 @@ interpreter, and debugger.
 %setup -q -c -n sbcl-%{version} -a 1 %{?sbcl_bootstrap_src}
 
 pushd sbcl-%{version}
-#%patch1 -p1 -b .personality
-#%patch2 -p1 -b .optflags
-#%{?sbcl_verbose:%patch3 -p1 -b .verbose-build}
-
-# upstream patches
-#%patch100 -p1 -b .gcc10
 
 # fix permissions (some have eXecute bit set)
 find . -name '*.c' | xargs chmod 644
@@ -236,6 +207,21 @@ popd
 %{_prefix}/lib/sbcl/sbcl.core
 
 %changelog
+* Tue Nov 7 2023 Stephen Hassard <steve@hassard.net> - 2.3.10-1
+- Bump to 2.3.10
+
+* Thu Sep 28 2023 Stephen Hassard <steve@hassard.net> - 2.3.9-1
+- Bump to 2.3.9
+
+* Sun Sep 24 2023 Stephen Hassard <steve@hassard.net> - 2.3.8-2
+- Fix aarch64 builds
+
+* Sat Sep 9 2023 Stephen Hassard <steve@hassard.net> - 2.3.8-1
+- Bump to 2.3.8
+
+* Wed Jun 28 2023 Stephen Hassard <steve@hassard.net> - 2.3.6-1
+- Bump to 2.3.6
+
 * Sun May 28 2023 Stephen Hassard <steve@hassard.net> - 2.3.5-1
 - Bump to 2.3.5
 - Use https urls to make copr happy.
