@@ -45,3 +45,7 @@ strip --strip-all %{buildroot}%{_bindir}/*
 %license LICENSE.md
 %doc README.md
 %{_bindir}/zellij
+
+%changelog
+* Wed Nov 8 2023 Stephen Hassard <steve@hassard.net> - 0.39.0-1
+- Bump to 0.39.0
