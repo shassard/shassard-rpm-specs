@@ -11,6 +11,7 @@ URL: https://nim-lang.org/
 BuildRequires: gcc
 BuildRequires: pcre2-devel
 BuildRequires: openssl-devel
+BuildRequires: git
 Requires: gcc
 
 %description
