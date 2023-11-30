@@ -1,5 +1,5 @@
-Version:        0.051
-Release:        2%{?dist}
+Version:        0.052
+Release:        1%{?dist}
 URL:            https://juliamono.netlify.app/
 
 %global foundry Cormullion
