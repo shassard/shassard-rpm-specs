@@ -7,7 +7,7 @@
 
 Name: 	 sbcl
 Summary: Steel Bank Common Lisp
-Version: 2.3.11
+Version: 2.4.0
 Release: 1%{?dist}
 
 License: BSD
@@ -207,6 +207,9 @@ popd
 %{_prefix}/lib/sbcl/sbcl.core
 
 %changelog
+* Thu Dec 28 2023 Stephen Hassard <steve@hassard.net> - 2.4.0-1
+- Bump to 2.4.0
+
 * Mon Nov 27 2023 Stephen Hassard <steve@hassard.net> - 2.3.11-1
 - Bump to 2.3.11
 
