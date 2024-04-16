@@ -11,8 +11,8 @@ Source0:    %{url}/archive/refs/tags/gix-v%{version}.tar.gz
 
 %if 0%{?el8}
 %else
-BuildRequires: cargo >= 1.39
-BuildRequires: rust >= 1.39
+BuildRequires: cargo >= 1.74
+BuildRequires: rust >= 1.74
 %endif
 BuildRequires: cmake
 BuildRequires: openssl-devel
