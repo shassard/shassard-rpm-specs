@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:       gitoxide
-Version:    0.55.2
+Version:    0.62
 Release:    1%{?dist}
 Summary:    An idiomatic, lean, fast & safe pure Rust implementation of Git
 
