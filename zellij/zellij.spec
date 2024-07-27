@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:       zellij
-Version:    0.39.2
+Version:    0.40.1
 Release:    1%{?dist}
 Summary:    A terminal workspace with batteries included.
 
@@ -47,13 +47,3 @@ strip --strip-all %{buildroot}%{_bindir}/*
 %license LICENSE.md
 %doc README.md
 %{_bindir}/zellij
-
-%changelog
-* Wed Nov 29 2023 Stephen Hassard <steve@hassard.net> - 0.39.2-1
-- Bump to 0.39.2
-
-* Thu Nov 16 2023 Stephen Hassard <steve@hassard.net> - 0.39.1-1
-- Bump to 0.39.1
-
-* Wed Nov 8 2023 Stephen Hassard <steve@hassard.net> - 0.39.0-1
-- Bump to 0.39.0
