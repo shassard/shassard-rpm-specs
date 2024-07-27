@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:       ripgrep
-Version:    14.0.3
+Version:    14.1.0
 Release:    1%{?dist}
 Summary:    ripgrep is a line-oriented search tool that recursively searches the current directory for a regex pattern.
 License:    MIT
