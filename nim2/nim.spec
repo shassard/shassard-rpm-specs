@@ -2,7 +2,7 @@
 
 Summary: A statically typed compiled systems programming language
 Name: nim
-Version: 2.0.2
+Version: 2.0.8
 Release: 1
 License: MIT
 Group: Development/Languages
@@ -56,36 +56,3 @@ ln -f -s -t %{buildroot}/%{_sysconfdir}/%{name} nim.cfg %{_datadir}/%{name}/conf
 %{_bindir}/testament
 %{_datadir}/%{name}
 %{_sysconfdir}/%{name}
-
-%changelog
-* Sun Jan 1 2024 Stephen Hassard <steve@hassard.net> - 2.0.2-1
-- Bump to 2.0.2
-* Wed Nov 8 2023 Stephen Hassard <steve@hassard.net> - 2.0.0-1
-- Bump to 2.0.0
-* Mon May 29 2023 Stephen Hassard <steve@hassard.net> - 1.9.3-1
-- Use upstream latest-version-2.0 sources.
-* Mon May 29 2023 Stephen Hassard <steve@hassard.net> - 1.6.12-1
-- Bump to upstream 1.6.12
-* Wed Nov 23 2022 Stephen Hassard <steve@hassard.net> - 1.6.10-1
-- Bump to upstream 1.6.10
-- Remove openssl 1.0 compat libs, as 3.0 is supported upstream.
-* Tue Sep 27 2022 Stephen Hassard <steve@hassard.net> - 1.6.8-1
-- Bump to upstream 1.6.8
-* Sat Sep 10 2022 Stephen Hassard <steve@hassard.net> - 1.6.6-5
-- Add proper openssl 1.1 libraries based on OS to fix Fedora 36+ usage.
-* Sun Aug 28 2022 Stephen Hassard <steve@hassard.net> - 1.6.6-4
-- Move config folder, but symlink it to the previous location to improve nimlsp usage.
-* Sun Aug 28 2022 Stephen Hassard <steve@hassard.net> - 1.6.6-3
-- Rework pathing so we don't litter stuff around the wrong place.
-- Add path to nim.cfg so we find bits in the new path layout.
-- Add missing doc folder
-* Thu Jul 28 2022 Stephen Hassard <steve@hassard.net> - 1.6.6-2
-- Add gcc dep for builds
-* Thu May 5 2022 Stephen Hassard <steve@hassard.net> - 1.6.6-1
-- Update to 1.6.6
-* Sat Apr 30 2022 Stephen Hassard <steve@hassard.net> - 1.6.4-3
-- Add library bits for nimlangserver
-* Sat Apr 30 2022 Stephen Hassard <steve@hassard.net> - 1.6.4-2
-- Fix missing lib directory
-* Sat Apr 30 2022 Stephen Hassard <steve@hassard.net> - 1.6.4-1
-- First build of 1.6.4
