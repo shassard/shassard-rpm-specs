@@ -7,7 +7,7 @@
 
 Name: 	 sbcl
 Summary: Steel Bank Common Lisp
-Version: 2.4.8
+Version: 2.4.9
 Release: 1%{?dist}
 
 License: BSD
