@@ -16,6 +16,9 @@ URL:            https://juliamono.netlify.app/
 Source0:        https://github.com/cormullion/juliamono/releases/download/v%{version}/JuliaMono-ttf.zip
 Source10:       63-%{fontpkgname}.conf
 
+BuildRequires:              fonts-rpm-macros
+BuildRequires:              fonts-srpm-macros
+
 %fontpkg
 
 %prep
