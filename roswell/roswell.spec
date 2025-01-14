@@ -3,7 +3,7 @@
 Summary: Common Lisp environment setup Utility
 Name: roswell
 Version: 24.10.115
-Release: 1
+Release: 2
 License: MIT
 Group: Development/Languages
 Source: https://github.com/%{name}/%{name}/archive/refs/tags/v%{version}.tar.gz
@@ -12,7 +12,7 @@ BuildRequires: gcc
 BuildRequires: automake
 BuildRequires: libcurl-devel
 BuildRequires: zlib-devel
-Requires: make
+Requires: make patchelf
 
 %description
 Roswell is a Lisp implementation installer/manager, launcher, and much more! It started as a command-line tool with the aim to make installing and managing Common Lisp implementations really simple and easy.
