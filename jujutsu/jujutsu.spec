@@ -5,15 +5,14 @@ Name:       jujutsu
 Version:    0.25.0
 Release:    2%{?dist}
 Summary:    A Git-compatible VCS that is both simple and powerful
-
 License:    Apache-2.0
 URL:        https://github.com/jj-vcs/jj
-
+ExclusiveArch: x86_64 aarch64
 %ifarch x86_64
-Source0:    %{url}/releases/download/v%{version}/jj-v%{version}-x86_64-unknown-linux-musl.tar.gz
+Source10:    %{url}/releases/download/v%{version}/jj-v%{version}-x86_64-unknown-linux-musl.tar.gz
 %endif
 %ifarch aarm64
-Source0:    %{url}/releases/download/v%{version}/jj-v%{version}-aarm64-unknown-linux-musl.tar.gz
+Source20:    %{url}/releases/download/v%{version}/jj-v%{version}-aarm64-unknown-linux-musl.tar.gz
 %endif
 
 %description
