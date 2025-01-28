@@ -3,7 +3,7 @@
 
 Name:       jujutsu
 Version:    0.25.0
-Release:    1%{?dist}
+Release:    2%{?dist}
 Summary:    A Git-compatible VCS that is both simple and powerful
 
 License:    Apache-2.0
@@ -19,7 +19,12 @@ A Git-compatible VCS that is both simple and powerful
 %install
 install -d -m0755 %{buildroot}%{_bindir}
 install -p -m0755 jj %{buildroot}%{_bindir}
+echo "jj util completion fish | source" > %{buildroot}%{_datadir}/fish/vendor_completions.d/jj.fish
 
 %files
 %doc LICENSE
 %{_bindir}/jj
+${_datadir}/fish/vendor_completions.d/jj.fish
+
+%changelog
+%autochangelog
