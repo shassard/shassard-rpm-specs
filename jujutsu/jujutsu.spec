@@ -8,7 +8,13 @@ Summary:    A Git-compatible VCS that is both simple and powerful
 
 License:    Apache-2.0
 URL:        https://github.com/jj-vcs/jj
-Source0:    %{url}/releases/download/v%{version}/jj-v%{version}-%{_arch}-unknown-linux-musl.tar.gz
+
+%ifarch x86_64
+Source0:    %{url}/releases/download/v%{version}/jj-v%{version}-x86_64-unknown-linux-musl.tar.gz
+%endif
+%ifarch aarm64
+Source0:    %{url}/releases/download/v%{version}/jj-v%{version}-aarm64-unknown-linux-musl.tar.gz
+%endif
 
 %description
 A Git-compatible VCS that is both simple and powerful
