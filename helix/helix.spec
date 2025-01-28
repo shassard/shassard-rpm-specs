@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:       helix
-Version:    25.01
+Version:    25.01.1
 Release:    1%{?dist}
 Summary:    A post-modern modal text editor.
 
