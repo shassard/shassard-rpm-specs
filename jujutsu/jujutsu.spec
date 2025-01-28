@@ -19,12 +19,16 @@ A Git-compatible VCS that is both simple and powerful
 %install
 install -d -m0755 %{buildroot}%{_bindir}
 install -p -m0755 jj %{buildroot}%{_bindir}
+echo "source <(jj util completion bash)" > %{buildroot}%{_datadir}/bash-completion/completions/jj
 echo "jj util completion fish | source" > %{buildroot}%{_datadir}/fish/vendor_completions.d/jj.fish
+echo "source <(jj util completion zsh)" > %{buildroot}%{_datadir}/zsh/site-functions/_jj
 
 %files
 %doc LICENSE
 %{_bindir}/jj
-${_datadir}/fish/vendor_completions.d/jj.fish
+%{_datadir}/bash-completion/completions/jj
+%{_datadir}/fish/vendor_completions.d/jj.fish
+%{_datadir}/zsh/site-functions/_jj
 
 %changelog
 %autochangelog
