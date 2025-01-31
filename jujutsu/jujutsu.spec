@@ -9,14 +9,14 @@ License:    Apache-2.0
 URL:        https://github.com/jj-vcs/jj
 ExclusiveArch: x86_64 aarch64
 %ifarch x86_64
-Source10:    %{url}/releases/download/v%{version}/jj-v%{version}-x86_64-unknown-linux-musl.tar.gz
+Source0:    %{url}/releases/download/v%{version}/jj-v%{version}-x86_64-unknown-linux-musl.tar.gz
 %endif
 %ifarch aarm64
-Source20:    %{url}/releases/download/v%{version}/jj-v%{version}-aarm64-unknown-linux-musl.tar.gz
+Source0:    %{url}/releases/download/v%{version}/jj-v%{version}-aarm64-unknown-linux-musl.tar.gz
 %endif
-Source31: jj.bash
-Source32: jj.fish
-Source33: jj.zsh
+Source10: jj.bash
+Source11: jj.fish
+Source12: jj.zsh
 
 %description
 A Git-compatible VCS that is both simple and powerful
@@ -30,9 +30,9 @@ install -p -m0755 jj %{buildroot}%{_bindir}
 install -d -m0755 %{buildroot}%{_datadir}/bash-completion/completions
 install -d -m0755 %{buildroot}%{_datadir}/fish/vendor_completions.d
 install -d -m0755 %{buildroot}%{_datadir}/zsh/site-functions
-install -p -m0755 jj.bash %{buildroot}%{_datadir}/bash-completion/completions/jj
-install -p -m0755 jj.fish %{buildroot}%{_datadir}/fish/vendor_completions.d/jj.fish
-install -p -m0755 jj.zsh %{buildroot}%{_datadir}/zsh/site-functions/_jj
+install -p -m0755 %{SOURCE10} %{buildroot}%{_datadir}/bash-completion/completions/jj
+install -p -m0755 %{SOURCE11} %{buildroot}%{_datadir}/fish/vendor_completions.d/jj.fish
+install -p -m0755 %{SOURCE12} %{buildroot}%{_datadir}/zsh/site-functions/_jj
 
 %files
 %doc LICENSE
