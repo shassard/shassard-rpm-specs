@@ -14,6 +14,9 @@ Source10:    %{url}/releases/download/v%{version}/jj-v%{version}-x86_64-unknown-
 %ifarch aarm64
 Source20:    %{url}/releases/download/v%{version}/jj-v%{version}-aarm64-unknown-linux-musl.tar.gz
 %endif
+Source31: jj.bash
+Source32: jj.fish
+Source33: jj.zsh
 
 %description
 A Git-compatible VCS that is both simple and powerful
@@ -27,9 +30,9 @@ install -p -m0755 jj %{buildroot}%{_bindir}
 install -d -m0755 %{buildroot}%{_datadir}/bash-completion/completions
 install -d -m0755 %{buildroot}%{_datadir}/fish/vendor_completions.d
 install -d -m0755 %{buildroot}%{_datadir}/zsh/site-functions
-echo "source <(jj util completion bash)" > %{buildroot}%{_datadir}/bash-completion/completions/jj
-echo "jj util completion fish | source" > %{buildroot}%{_datadir}/fish/vendor_completions.d/jj.fish
-echo "source <(jj util completion zsh)" > %{buildroot}%{_datadir}/zsh/site-functions/_jj
+install -p -m0755 jj.bash %{buildroot}%{_datadir}/bash-completion/completions/jj
+install -p -m0755 jj.fish %{buildroot}%{_datadir}/fish/vendor_completions.d/jj.fish
+install -p -m0755 jj.zsh %{buildroot}%{_datadir}/zsh/site-functions/_jj
 
 %files
 %doc LICENSE
