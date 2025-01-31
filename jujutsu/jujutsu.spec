@@ -1,9 +1,8 @@
 %global debug_package %{nil}
-%global source_date_epoch_from_changelog false
 
 Name:       jujutsu
 Version:    0.25.0
-Release:    6%{?dist}
+Release:    %autorelease
 Summary:    A Git-compatible VCS that is both simple and powerful
 License:    Apache-2.0
 URL:        https://github.com/jj-vcs/jj
