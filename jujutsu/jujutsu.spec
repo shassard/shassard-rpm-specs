@@ -7,8 +7,15 @@ Release:    5%{?dist}
 Summary:    A Git-compatible VCS that is both simple and powerful
 License:    Apache-2.0
 URL:        https://github.com/jj-vcs/jj
+
 ExclusiveArch: x86_64 aarch64
-Source0:  %{url}/releases/download/v%{version}/jj-v%{version}-%{_arch}-unknown-linux-musl.tar.gz
+%ifarch x86_64
+Source0:    %{url}/releases/download/v%{version}/jj-v%{version}-x86_64-unknown-linux-musl.tar.gz
+%endif
+%ifarch aarch64
+Source0:    %{url}/releases/download/v%{version}/jj-v%{version}-aarch64-unknown-linux-musl.tar.gz
+%endif
+
 Source10: jj.bash
 Source11: jj.fish
 Source12: jj.zsh
