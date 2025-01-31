@@ -3,7 +3,7 @@
 
 Name:       jujutsu
 Version:    0.25.0
-Release:    2%{?dist}
+Release:    3%{?dist}
 Summary:    A Git-compatible VCS that is both simple and powerful
 License:    Apache-2.0
 URL:        https://github.com/jj-vcs/jj
