@@ -11,8 +11,8 @@ ExclusiveArch: x86_64 aarch64
 %ifarch x86_64
 Source0:    %{url}/releases/download/v%{version}/jj-v%{version}-x86_64-unknown-linux-musl.tar.gz
 %endif
-%ifarch aarm64
-Source0:    %{url}/releases/download/v%{version}/jj-v%{version}-aarm64-unknown-linux-musl.tar.gz
+%ifarch aarch64
+Source0:    %{url}/releases/download/v%{version}/jj-v%{version}-aarch64-unknown-linux-musl.tar.gz
 %endif
 Source10: jj.bash
 Source11: jj.fish
