@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:       gitu
-Version:    0.27.0
+Version:    0.28.0
 Release:    1%{?dist}
 Summary:    A TUI Git client inspired by Magit
 
