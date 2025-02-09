@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:       fzf
-Version:    0.57.0
+Version:    0.59.0
 Release:    1%{?dist}
 Summary:    A command-line fuzzy finder
 License:    MIT
