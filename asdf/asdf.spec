@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:       asdf
-Version:    0.16.1
+Version:    0.16.5
 Release:    %autorelease
 Summary:    Extendable version manager with support for Ruby, Node.js, Elixir, Erlang & more 
 License:    MIT
