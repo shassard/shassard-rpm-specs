@@ -1,6 +1,6 @@
 Name:           ghostty
 Version:        1.1.3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration
 
 
@@ -85,8 +85,6 @@ zig build \
 %{_prefix}/share/nvim/site/ftplugin/ghostty.vim
 %{_prefix}/share/nvim/site/syntax/ghostty.vim
 %{_prefix}/share/terminfo/g/ghostty
-%{_prefix}/share/terminfo/ghostty.termcap
-%{_prefix}/share/terminfo/ghostty.terminfo
 %{_prefix}/share/terminfo/x/xterm-ghostty
 %{_prefix}/share/vim/vimfiles/ftdetect/ghostty.vim
 %{_prefix}/share/vim/vimfiles/ftplugin/ghostty.vim
