@@ -1,6 +1,6 @@
 Name:           ghostty
 Version:        1.1.3
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration
 
 
@@ -37,6 +37,7 @@ Requires: libpng
 Requires: oniguruma
 Requires: pixman
 Requires: zlib-ng
+Requires: ncurses-term
 
 
 %description
@@ -58,7 +59,7 @@ zig build \
     -Dcpu=baseline \
     -Dpie=true \
     -Demit-docs
-
+rm %{buildroot}%{_prefix}/share/terminfo/g/ghostty
 
 %files
 %license LICENSE
@@ -86,7 +87,6 @@ zig build \
 %{_prefix}/share/nvim/site/ftdetect/ghostty.vim
 %{_prefix}/share/nvim/site/ftplugin/ghostty.vim
 %{_prefix}/share/nvim/site/syntax/ghostty.vim
-%{_prefix}/share/terminfo/g/ghostty
 %{_prefix}/share/terminfo/x/xterm-ghostty
 %{_prefix}/share/vim/vimfiles/compiler/ghostty.vim
 %{_prefix}/share/vim/vimfiles/ftdetect/ghostty.vim
