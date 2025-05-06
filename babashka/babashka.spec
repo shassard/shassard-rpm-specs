@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:       babashka
-Version:    1.12.196
+Version:    1.12.200
 Release:    1%{?dist}
 Summary:    Native, fast starting Clojure interpreter for scripting
 
