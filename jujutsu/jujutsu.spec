@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:       jujutsu
-Version:    0.28.2
+Version:    0.29.0
 Release:    %autorelease
 Summary:    A Git-compatible VCS that is both simple and powerful
 License:    Apache-2.0
