@@ -1,4 +1,4 @@
-Version:        0.059
+Version:        0.060
 Release:        1%{?dist}
 URL:            https://juliamono.netlify.app/
 
